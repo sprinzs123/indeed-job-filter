@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles%}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="{% static 'store/css/bootstrap.min.css' %}"> -->
+  <!-- main css -->
+  <link rel="stylesheet" href="{% static 'store/css/style.css' %}">
+
+  <!-- font awesome -->
+<link rel="stylesheet" href="{% static 'store/css/all.css' %}">
+  <title>Grandma's Project</title>
+  <style>
+  </style>
+</head>
+
+<body>
+
+  <!-- icons -->
+  <!-- 
+    https://www.iconfinder.com/icons/2427887/dessert_donut_doughnut_fat_sweets_icon
+    Creative Commons (Attribution 3.0 Unported);
+    https://www.iconfinder.com/korawan_m
+         -->
+  <!-- 
+    https://www.iconfinder.com/icons/2427860/baguette_bread_bread_loaf_food_toast_icon
+    Creative Commons (Attribution 3.0 Unported);
+    https://www.iconfinder.com/korawan_m
+         -->
+  <!-- 
+    https://www.iconfinder.com/icons/2427875/cup_cupcake_dessertice_cream_yogurt_icon
+    Creative Commons (Attribution 3.0 Unported);
+    https://www.iconfinder.com/korawan_m
+         -->
+  <!-- 
+    https://www.iconfinder.com/icons/2671457/candy_sweets_treat_trick_icon
+    Creative Commons (Attribution 3.0 Unported);
+    https://www.iconfinder.com/bluelabelicons
+         -->
+  <!--end of icons icons -->
+  <header id="header">
+    <nav class="navbar navbar-expand-lg px-4">
+      <a href="#" class="navbar-brand">
+        <img src="{% static 'logo.svg' %}" alt="main icon">
+      </a>
+      <button type='button' class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+        <span class="toggler-icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav text-capitalized mx-auto">
+          <li class="nav-item active">
+            <a href="#header" class='nav-link'>home</a>
+          </li>
+          <li class="nav-item active">
+            <a href="#about" class='nav-link'>about</a>
+          </li>
+          <li class="nav-item active">
+            <a href="#store" class='nav-link'>store</a>
+          </li>
+          <li class="nav-item active">
+            <a href="#cakes" class='nav-link'>order</a>
+          </li>
+        </ul>
+        <div class="nav-info-items d-none d-lg-flex">
+          <!-- single info -->
+          <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
+            <span class="info-icon mx-lg-3">
+              <i class="fas fa-phone"></i>
+            </span>
+            <p class="mb-0">+ 123 4352 654</p>
+          </div>
+          <!-- second info -->
+          <div id="cart-info" class="nav-info align-items-center cart-info d-flex lustifu-content-between mx-lg-5">
+            <span class="cart-info_icon mr-lg-3">
+              <i class="fas fa-shopping-cart"></i>
+            </span>
+            <p class="mb-0 text-capitalize">
+              <span id="item-count">2</span>
+              items - $
+              <span class="item-total">10.49</span>
+            </p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end nav -->
+
+    <!-- banner -->
+    <div class="container-fluid">
+     <!-- <div style="background-image: '{% static 'images/headerBcg.jpeg' %}'"> -->
+      <div class="row max-height justify-content-center align-items-center">
+        <div class="col-10 mx-auto banner text-center">
+          <h1 class="text-capitalize">
+            wellcome to <strong class="banner-title">grandma's</strong>
+          </h1>
+          <a href="#store" class="btn banner-link text-uppercase my-2">Explore</a>
+<!--        </div>-->
+      </div>
+        <!-- store -->
+      </div>
+    </div>
+    <!-- end banner -->
+  </header>
+  <!-- end header -->
+
+  <!-- about -->
+  <section class="about py-5" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-10 mx-auto col-md-6 my-5">
+          <h1 class="text-capitalize">About <strong class="banner-title">us</strong></h1>
+          <p class="my-4 text-muted w-75">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit temporibus
+            magnam at, quas assumenda sequi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae,
+            praesentium.</p>
+          <a href="#" class="btn btn-black text-uppercase">Explore</a>
+        </div>
+        <div class="col-10 mx-auto col-md-6 my-5 aligh-self-center">
+          <div class="about-img_container">
+            <img src="{% static 'sweets-1.jpeg' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- end about -->
+
+  <!-- store -->
+  <section id="store" class="store py-5">
+    <div class="container">
+      <!-- section title -->
+      <div class="row">
+        <div class="col-10 mx-auto sol-sm-6 text-center">
+          <h1 class="text-capitalize">our <strong class="banner-title">store</strong></h1>
+          <!-- filrer buttons -->
+          <div class="row">
+            <div class="col-lg-8 mx-auto d-flex justify-content-around sortBtn flex-wrap">
+              <a href="#" class=" btn btn-black text-uppercase filter-btn m-2" data-filter='all'>all</a>
+              <a href="#" class=" btn btn-black text-uppercase filter-btn m-2" data-filter='all'>cakes</a>
+              <a href="#" class=" btn btn-black text-uppercase filter-btn m-2" data-filter='all'>cupcakes</a>
+              <a href="#" class=" btn btn-black text-uppercase filter-btn m-2" data-filter='all'>sweets</a>
+              <a href="#" class=" btn btn-black text-uppercase filter-btn m-2" data-filter='all'>doughnuts</a>
+            </div>
+          </div>
+          <!-- end filter buttons -->
+          <!-- serach box -->
+          <div class="col-10 mx-auto col-md-6">
+            <form>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text search-box" id="search-icon">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" id="search-item" placeholder="item..">
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- end search box -->
+        <!-- store items -->
+        <div class="row store-items" id="store-items">
+          <!-- single item -->
+          {% for item in items.all %}
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="{{ item.type }}">
+            <div class="card single-item">
+              <div class="img-container">
+                <img src="{{ item.picture.url }}" class="card-img-top store-img" alt=""/>
+                <span class="store-item-icon">
+                  <div class="fas fa-shopping-cart"></div>
+                </span>
+              </div>
+              <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalized">
+                  <h5 id='store-item-name'>{{ item.title}}</h5>
+                  <h5 class="store-item-value">$ <strong id="store-item-price" class="font=weight=bold">{{ item.price}}</strong></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- end single item -->
+
+        </div>
+        <!-- end store items -->
+      </div>
+    </div>
+    <!-- end section title -->
+  </section>
+  <!-- end store -->
+  <!-- services -->
+  <section id="services" class="services py-5">
+    <div class="container">
+      <div class="row">
+        <!-- single service -->
+        <div class="col-md-4 text-center my-3">
+          <img src="{% static 'bread-icon.png' %}" alt="">
+          <h6 class="text-uppercase my-3 service-title">bread</h6>
+          <p class="w-75 mx-auto text-left service-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Praesentium omnis eveniet itaque nostrum ad nesciunt delectus dolore illum nulla nihil.</p>
+        </div>
+        <!-- end single service -->
+        <div class="col-md-4 text-center my-3">
+          <img src="{% static 'cupcake-icon.png' %}" alt="">
+          <h6 class="text-uppercase my-3 service-title">cupcakes</h6>
+          <p class="w-75 mx-auto text-left service-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Praesentium omnis eveniet itaque nostrum ad nesciunt delectus dolore illum nulla nihil.</p>
+        </div>
+        <div class="col-md-4 text-center my-3">
+          <img src="{% static 'candy-icon.png' %}" alt="">
+          <h6 class="text-uppercase my-3 service-title">candy</h6>
+          <p class="w-75 mx-auto text-left service-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Praesentium omnis eveniet itaque nostrum ad nesciunt delectus dolore illum nulla nihil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end services -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 footer-title py-5">
+          <h1 class="text-capitalize text-center">
+            <strong class="banner-title">grandma's</strong>
+          </h1>
+          <div class="footer-icons mt-3 d-flex justify-content-around flex-wrap">
+            <a href="" class="footer-icons">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="" class="footer-icons">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="footer-icons">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 footer-contact text-center text-capitalize py-5">
+          <h3 class="mb-5">contact</h3>
+          <p class="d-flex flex-wrap">
+            <span class="mr-4 footer-icon">
+              <i class="fas fa-map"></i>
+            </span>
+            <span>
+              1234 Broadway St, Santa Monica CA 90123 
+            </span>
+          </p>
+          <p class="d-flex flex-wrap">
+            <span class="mr-4 footer-icon">
+              <i class="fas fa-phone"></i>
+            </span>
+            <span>
+              123 254 4596
+            </span>
+          </p>
+          <p class="d-flex flex-wrap">
+            <span class="mr-4 footer-icon">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span>
+              email@email.com
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- jquery -->
+  <script src="{% static 'store/js/jquery-3.3.1.min.js' %}"></script>
+  <!-- bootstrap js -->
+  <script src="{% static 'store/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- script js -->
+<!--  <script src="js/app.js"></script>-->
+</body>
+
+</html>
