@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Review the review</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class='container py-4'>
+		<h1>My Study Report</h1>
+		<h6>Total time:</h6>
+		<h6>Weeks total:</h6>
+		<div class="big-box">
+			<h2>Work So Far</h2>
+			<div class="graph1">
+				<embed type="image/svg+xml" src={{week_time|safe}}>
+			</div>
+			<div class="row">
+				<div class="col-md-6 graph1">
+					<embed type="image/svg+xml" src={{top_topic|safe}}>
+				</div>
+				<div class="col-md-6 graph1">
+					<embed type="image/svg+xml" src={{top_subject|safe}}>
+				</div>
+			</div>
+		</div>
+		<div class="big-box">
+			<h2>Project Information</h2>
+			<div class="graph1">
+				<embed type="image/svg+xml" src={{finished|safe}}>
+			</div>
+			<h4 class='mt-3'>In progress and favorite projects</h4>
+			<div class="row">
+				<div class="col-6">
+					<div class="graph1">
+						<embed type="image/svg+xml" src={{one_proj|safe}}>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="graph1">
+						<embed type="image/svg+xml" src={{portfolio_proj|safe}}>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="graph1">
+						<embed type="image/svg+xml" src={{store_proj|safe}}>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="graph1">
+						<embed type="image/svg+xml" src={{debate_proj|safe}}>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="graph1">
+						<embed type="image/svg+xml" src={{bakery_proj|safe}}>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="graph1">
+						<embed type="image/svg+xml" src={{study_proj|safe}}>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="big-box">
+			<h2>Recent study</h2>
+			<div class="graph1">
+				<embed type="image/svg+xml" src={{past_time|safe}}>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<embed type="image/svg+xml" src={{past_proj|safe}}>
+				</div>
+				<div class="col-md-6">
+					<embed type="image/svg+xml" src={{past_topic|safe}}>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
