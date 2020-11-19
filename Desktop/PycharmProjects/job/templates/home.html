@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Indeed scraping</title>
+</head>
+<body>
+<div class="container">
+    <div class="project-info">
+        <div class="project-info-text">
+            <h4>About project</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, optio.</p>
+        </div> 
+    </div>
+    <!-- url box -->
+    <div class="initial-box">
+        <div class="initial-box-in">
+            <h6>how to use it</h6>
+            <input type="text">
+        </div>
+    </div>
+    <!-- filter box -->
+    <div class="filter-box">
+        <div class="all-search">
+            <div class="search-box">
+                <div class="title-box">
+                    <h6>Title</h6>
+                    <ul class='filter-items'>
+                        <li class="one-box">
+                            <input type="text" class='filter' placeholder="filter here">
+                            <button class='filter-btn'>add</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search-box">
+                <div class="title-box">
+                    <h6>filter 2</h6>
+                    <ul class='filter-items'>
+                        <li class="one-box">
+                            <input type="text" class='filter' placeholder="filter here">
+                            <button class='filter-btn'>add</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search-box">
+                <div class="title-box">
+                    <h6>filter 3</h6>
+                    <ul class='filter-items'>
+                        <li class="one-box">
+                            <input type="text" class='filter' placeholder="filter here">
+                            <button class='filter-btn'>add</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+ <script src="{{url_for('static', filename='script.js')}}"> </script>
+</html>

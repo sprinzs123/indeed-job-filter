@@ -1,0 +1,52 @@
+:root{
+    --lightGrey: #faf9f8;
+}
+
+body{
+    background-color: var(--lightGrey)!important;
+}
+
+.initial-box, .filter-box, .project-info{
+    background-color: white;
+    margin-top: 3em;
+}
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.initial-box-in, .project-info-text{
+    padding: 1em;
+
+}
+
+.all-search{
+    display: flex;
+    padding: 1em;
+}
+
+.filter{
+    width: 75%;
+}
+.filter-items{
+    display: flex;
+}
+
+.one-box{
+    display: flex;
+    margin-left: 1.5 em;
+    margin-right: 1.5em;
+}
+
+@media screen and (max-width: 768px){
+    .all-search{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 978px){
+    .container{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
