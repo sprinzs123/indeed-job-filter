@@ -12,8 +12,22 @@ function addFields() {
             `
             newItem.innerHTML = newField
             parentDiv.appendChild(newItem)
+            removeFields()
         });
 
     });
 };
 addFields()
+
+
+// remove element on 'X' click. 
+// need to put this function after add element so DOM knows new element exists
+function removeFields(){
+    let allRemoveBtns = document.querySelectorAll('.delete-btn')
+    allRemoveBtns.forEach((removeBtn) => {
+        console.log(removeBtn)
+        removeBtn.addEventListener('click', function(event){
+            let boxItem = removeBtn.parentElement
+        })
+    })
+}

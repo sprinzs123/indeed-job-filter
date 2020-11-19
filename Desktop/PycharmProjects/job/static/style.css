@@ -29,7 +29,7 @@ body{
     width: 75%;
 }
 .filter-items{
-    display: flex;
+    display: block;
 }
 
 .one-box{
