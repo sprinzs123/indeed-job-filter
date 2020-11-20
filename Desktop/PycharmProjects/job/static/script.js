@@ -27,7 +27,9 @@ function removeFields(){
     allRemoveBtns.forEach((removeBtn) => {
         console.log(removeBtn)
         removeBtn.addEventListener('click', function(event){
-            let boxItem = removeBtn.parentElement
+
+            let boxItem = removeBtn.parentElement.remove()
+            // parentDiv.removeChild(boxItem)
         })
     })
 }
