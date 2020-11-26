@@ -1,64 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-    <title>Indeed scraping</title>
-</head>
-<body>
-<div class="container">
-    <div class="project-info">
-        <div class="project-info-text">
-            <h4>About project</h4>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, optio.</p>
-        </div> 
-    </div>
-    <!-- url box -->
-    <div class="initial-box">
-        <div class="initial-box-in">
-            <h6>how to use it</h6>
-            <input type="text">
+{% extends 'base.html' %}
+{% block content %}
+<div class="home-page">
+    <div class="container">
+        <div class="project-info">
+            <div class="project-info-text">
+                <h4>About project</h4>
+                <p>Filter items from search results from indeed.com to get better results.</p>
+            </div> 
         </div>
-    </div>
-    <!-- filter box -->
-    <div class="filter-box">
-        <div class="all-search">
-            <div class="search-box">
-                <div class="title-box">
-                    <h6>Title</h6>
-                    <ul class='filter-items'>
-                        <li class="one-box">
-                            <input type="text" class='filter' placeholder="filter here">
-                            <button class='filter-btn'>add</button>
-                        </li>
-                    </ul>
+        <!-- url box -->
+        <form action="#" method="POST" id='filter-form'>
+            <div class="initial-box">
+                <div class="initial-box-in">
+                    <h4>How to use it</h4>
+                    <input type="text" name='job-url' placeholder="url here">
+                    <p>Make a search for what you want to search on indeed and then paste that URL here</p>
                 </div>
             </div>
-            <div class="search-box">
-                <div class="title-box">
-                    <h6>filter 2</h6>
-                    <ul class='filter-items'>
-                        <li class="one-box">
-                            <input type="text" class='filter' placeholder="filter here">
-                            <button class='filter-btn'>add</button>
-                        </li>
-                    </ul>
+                <!-- filter box -->
+        <div class="filter-box">
+            <div class="container-items">
+                <h4>Filters</h4>
+                <div class="all-search">
+                    <div class="search-box">                
+                        <div class="title-box">
+                            <p>Title</p>
+                            <ul class='filter-items' id='title'>
+                                <li class="one-box">
+                                    <input type="text" class='filter' placeholder="filter here" name='title-0'>
+                                    <div class='filter-btn'>add</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="search-box">
+                        <div class="title-box">
+                            <p>Requirements</p>
+                            <ul class='filter-items' id='requirements'>
+                                <li class="one-box">
+                                    <input type="text" class='filter' placeholder="filter here" name='requirements-0'>
+                                    <div class='filter-btn'>add</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="search-box">
+                        <div class="title-box">
+                            <p>Summary</p>
+                            <ul class='filter-items'>
+                                <li class="one-box" id='summary'>
+                                    <input type="text" class='filter' placeholder="filter here" name='summary-0'> 
+                                    <div class='filter-btn'>add</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+    
             </div>
-            <div class="search-box">
-                <div class="title-box">
-                    <h6>filter 3</h6>
-                    <ul class='filter-items'>
-                        <li class="one-box">
-                            <input type="text" class='filter' placeholder="filter here">
-                            <button class='filter-btn'>add</button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    
         </div>
+        <!-- submit btn -->
+        <button class='submit-btn'>Get results</button>
+        </form>
     </div>
 </div>
-</body>
+
  <script src="{{url_for('static', filename='script.js')}}"> </script>
-</html>
+{% endblock %}

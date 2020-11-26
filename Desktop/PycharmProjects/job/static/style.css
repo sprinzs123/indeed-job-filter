@@ -1,43 +1,16 @@
 :root{
     --lightGrey: #faf9f8;
+    --inBlue: #2557a7;
+    --borderGrey: rgb(181, 180, 180);
+}
+
+h4{
+    color: var(--inBlue);
 }
 
 body{
-    background-color: var(--lightGrey)!important;
+    margin: 0px;
 }
-
-.initial-box, .filter-box, .project-info{
-    background-color: white;
-    margin-top: 3em;
-}
-.container{
-    width: 85%;
-    margin: 0 auto;
-}
-
-.initial-box-in, .project-info-text{
-    padding: 1em;
-
-}
-
-.all-search{
-    display: flex;
-    padding: 1em;
-}
-
-.filter{
-    width: 75%;
-}
-.filter-items{
-    display: block;
-}
-
-.one-box{
-    display: flex;
-    margin-left: 1.5 em;
-    margin-right: 1.5em;
-}
-
 @media screen and (max-width: 768px){
     .all-search{
         display: block;
@@ -49,4 +22,104 @@ body{
         width: 90%;
         margin: 0 auto;
     }
+}
+
+input{
+    border-radius: 5px;
+    border: 1px solid grey;
+    height: 25px;
+}
+
+input:focus{
+    border: 1px var(--inBlue) solid;
+}
+
+.home-page{
+    background-color: var(--lightGrey);
+}
+
+.initial-box, .filter-box, .project-info{
+    background-color: white;
+    margin-bottom: 3em;
+}
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.container-items{
+    padding: 1em;
+}
+
+.initial-box-in, .project-info-text{
+    padding: 1em;
+}
+
+ul{
+    list-style: none;
+}
+
+.all-search{
+    display: flex;
+    padding: 1em;
+}
+
+.filter{
+    width: 75%;    
+}
+
+.filter-btn, .delete-btn{
+    border: none;
+    color: black;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border: 1px var(--borderGrey) solid;
+    border-radius: 5px;
+    margin-left: 2px;
+    background-color: rgb(199, 199, 199);
+
+
+}
+.filter-items{
+    display: block;
+    padding-left: 0px;
+}
+
+.one-box{
+    display: flex;
+    margin-right: 1.5em;
+    margin-bottom: 0.3em;
+}
+
+.submit-btn{
+    background:var(--inBlue);
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    margin-top: 3em;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+/* result styles */
+.result-page{
+    background-color: white;
+}
+
+.job-description{
+    border: 1px solid var(--borderGrey);
+    border-radius:  5px;
+    margin: 0.5em;
+    max-width: 300px;
+}
+
+.job-describe{
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    color: var(--borderGrey);
 }
