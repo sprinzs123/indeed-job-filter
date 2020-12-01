@@ -2,14 +2,13 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
-url = "https://www.indeed.com/jobs?q=network&l=Marlton%2C+NJ"
 
+url = "https://www.indeed.com/jobs?q=network&l=Marlton%2C+NJ"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"}
+# going to be a master function where pass url and parameters
 # get all tags info from this scrip, but need mode processing to be done
 # find_all returns list and need to loop over to get data for each of the job position
 # can make into list of json files for templates showing
-
-
 def all_data(input_url):
     initial_page = requests.get(input_url, headers=headers)
     all_jobs = []
