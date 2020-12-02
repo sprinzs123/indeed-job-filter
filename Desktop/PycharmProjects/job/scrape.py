@@ -3,7 +3,7 @@ import requests
 import json
 
 
-url = "https://www.indeed.com/jobs?q=network&l=Marlton%2C+NJ"
+url = "https://www.indeed.com/jobs?q=computer&l=Marlton%2C+NJ&jt=parttime"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"}
 # going to be a master function where pass url and parameters
 # get all tags info from this scrip, but need mode processing to be done
@@ -87,4 +87,4 @@ data_testing = DataValidation()
 
 # print(data_testing.page_exists('http://google.com'))
 
-# all_data('https://www.indeed.com/jobs?q=software+developer&l=New+Jersey')
+all_data('https://www.indeed.com/jobs?q=software+developer&l=New+Jersey')
