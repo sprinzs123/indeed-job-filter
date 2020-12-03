@@ -36,7 +36,7 @@ class LinkedList(object):
         if self.head is None:
             return False
         else:
-            all_results = {}
+            all_results = []
             current_node = self.head
             count = 0
             while current_node:
@@ -44,7 +44,7 @@ class LinkedList(object):
                            'requirements': current_node.requirements, 'summary': current_node.summary,
                            'location': current_node.location, 'company': current_node.company,
                            'link': current_node.link}
-                all_results.update({count: one_job})
+                all_results.append(one_job)
                 count += 1
                 current_node = current_node.next
             return all_results
@@ -145,7 +145,7 @@ def all_data(input_url, title_filters, requirements_filters, summary_filters):
 
         # filtering items/getting final result of the that is going to be passed into flask for display
         # final output is lists of lists
-        print(item_list.item_count())
+        # print(item_list.item_count())
         return item_list.final_results()
 
 
@@ -179,5 +179,8 @@ def get_valid_urls(initial_url):
 
 # testing items to validate data
 test_url = 'https://www.indeed.com/jobs?q=computer&l=Marlton%2C+NJ&jt=parttime'
-all_data(test_url, None, None, None)
-# print(get_valid_urls(test_url))
+print(all_data(test_url, None, None, None))
+
+# test data that is pulled up with script
+# need for flask template testing
+dummy_items = [{'title': 'Guest Advocate (Cashier or Front of Store Attendant/ Cart At...', 'date': '30+ days ago', 'requirements': None, 'summary': 'Advocates of guest experience who welcome, thank, and exceed guest service expectations by focusing on guest interaction and recovery.', 'location': None, 'company': 'TARGET', 'link': 'https://www.indeed.com/rc/clk?jk=cf52b8bd0296e902&fccid=15f43d82dc901ff2&vjs=3'}, {'title': 'File Clerk, Per Diem - FLOAT DEPT - Various NJ Locations', 'date': '9 days ago', 'requirements': None, 'summary': 'Ability to use computer systems; ability to interact with registration staff to resolve issues.Prepares charts and paperwork packets for new patients.', 'location': None, 'company': 'Jefferson - Camden County, NJ', 'link': 'https://www.indeed.com/rc/clk?jk=c8bb4eb33d1bb4ea&fccid=cce48ad42816872f&vjs=3'}, {'title': 'Telemedicine Patient Registration Specialist - Full or Part...new', 'date': '7 days ago', 'requirements': None, 'summary': 'Medical billing - ensure all billing codes are entered correctly and accurately.Southern Jersey Family Medical Centers, Inc. is looking for a talented…', 'location': None, 'company': 'Southern Jersey Family Medical Centers', 'link': 'https://www.indeed.com/rc/clk?jk=539d96a1b7a174a2&fccid=92c7b089e7df7bc6&vjs=3'}]

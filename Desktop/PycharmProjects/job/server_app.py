@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from connected_scrape import dummy_items
 
 
 app = Flask(__name__)
@@ -19,7 +20,10 @@ def home():
 
 @app.route('/results')
 def result():
-    return render_template('results.html')
+    all_items = dummy_items
+    # all_items = {'title': 'title', "item": 'item'}
+    # all_items = [1, 2, 3]
+    return render_template('results.html', items=all_items)
 
 
 if __name__ == '__main__':

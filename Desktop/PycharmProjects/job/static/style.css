@@ -23,6 +23,15 @@ body{
         margin: 0 auto;
     }
 }
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+.home-page{
+    background-color: var(--lightGrey);
+    height: 100vh;
+}
+
 
 input{
     border-radius: 5px;
@@ -34,18 +43,12 @@ input:focus{
     border: 1px var(--inBlue) solid;
 }
 
-.home-page{
-    background-color: var(--lightGrey);
-}
 
-.initial-box, .filter-box, .project-info{
+.initial-box, .filter-box, .project-info-text{
     background-color: white;
     margin-bottom: 3em;
 }
-.container{
-    width: 85%;
-    margin: 0 auto;
-}
+
 
 .container-items{
     padding: 1em;
@@ -80,9 +83,8 @@ ul{
     border-radius: 5px;
     margin-left: 2px;
     background-color: rgb(199, 199, 199);
-
-
 }
+
 .filter-items{
     display: block;
     padding-left: 0px;
@@ -103,7 +105,6 @@ ul{
     border: none;
     border-radius: 5px;
 }
-
 
 
 /* result styles */

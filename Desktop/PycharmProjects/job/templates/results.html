@@ -1,18 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="container result-page">
     <h4>Results found: 4</h4>
     <ul class='search-results'>
         <li class="result">
+            {% for item in items%}
             <ul class='job-description'>
-                <li class='title'><b>Title</b></li>
-                <li>Company</li>
-                <li>Location</li>
-                <li><b>$80K</b></li>
-                <li>Requirements</li>
-                <li>Need</li>
-                <li class='job-describe'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, optio.</li>
-            </ul>            
+                <!-- if statement to make sure NONE is not displayed if data is not present -->
+                {% if item.location%}
+                <li>{{ item.location }}</li>
+                {% endif %}
+
+                
+                {% if item.title%}
+                <li class='title'><b><a href="{{ item.link}}">{{ item.title }}</a></b></li>
+                {% endif %}
+                
+                {% if item.company%}
+                <li>{{ item.company }}</li>
+                {% endif %}
+
+                {% if item.location%}
+                <li>{{ item.location }}</li>
+                {% endif %}
+               
+                {% if item.requirements%}
+                <li>{{ item.requirements }}</li>
+                {% endif %}
+
+                {% if item.summary%}
+                <li class='job-describe'>{{ item.summary }}</li>
+                {% endif %}
+
+            </ul>     
+            {% endfor %}
+       
 
         </li>
     </ul>
