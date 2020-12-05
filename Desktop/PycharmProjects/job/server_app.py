@@ -9,10 +9,6 @@ app = Flask(__name__)
 def home():
     if request.method == 'POST':
         print('is it working')
-        title = request.form
-        for field in title:
-            print(title.get(field))
-        # print(title.get("title-0"))
         return render_template('home.html')
     else:
         return render_template('home.html')

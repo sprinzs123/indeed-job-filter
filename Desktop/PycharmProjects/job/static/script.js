@@ -50,4 +50,28 @@ function getColumnFilter(childElement){
 }
 
 
+// form validation to make sure that url page is not empty
+function formValidation(){
+    let submitBtn = document.querySelector('.submit-btn')
+    let emptyUrlError = document.querySelector('.empty-url')
+    submitBtn.addEventListener('click', function(event){
+        if(isUrlEmpty() == true){ 
+            emptyUrlError.style.display = 'block'
+            event.preventDefault()
+        }
+    })
+}
+formValidation()
+
+
+// make sure that url is present
+function isUrlEmpty(){
+    let url_input = document.querySelector('#url-input').value
+    if(url_input === ""){
+        return true
+    } else {
+        return false
+    }
+}
+
 

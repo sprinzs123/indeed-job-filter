@@ -43,6 +43,11 @@ input:focus{
     border: 1px var(--inBlue) solid;
 }
 
+.empty-url{
+    display: none;
+    color: red;
+    margin-bottom: 0.5em;
+}
 
 .initial-box, .filter-box, .project-info-text{
     background-color: white;
