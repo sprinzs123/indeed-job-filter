@@ -69,6 +69,5 @@ title_filters = ['python', 'filter']
 test.filter_titles(title_filters)
 
 
-print(test.final_results())
 
 

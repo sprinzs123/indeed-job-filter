@@ -15,13 +15,15 @@
                     <h5>How to use it</h5>
                     <h4 class='empty-url'>Empty URL</h4>
                     <input type="text" name='job-url' placeholder="url here" id='url-input'>
-                    <p>Make a search for what you want to search on indeed and then paste that URL here</p>
+                    <p>Make initial search at indeed and then pass this url here</p>
                 </div>
             </div>
                 <!-- filter box -->
         <div class="filter-box">
             <div class="container-items">
+                <h4>Filter Items</h4>
                 <h4>Exact search</h4>
+                <p>Filter items by exact keywords</p>
                 <div class="all-search">
                     <div class="search-box">                
                         <div class="title-box">
@@ -56,8 +58,24 @@
                             </ul>
                         </div>
                     </div>
+                    
+
                 </div>    
+                <h4>Common search</h4>
+                <p>Filter all items that have this search word</p>
+                <div class="all-search">
+                    <div class="search-box">                
+                        <div class="title-box">
+                            <ul class='filter-items' id='title'>
+                                <li class="one-box">
+                                    <input type="text" class='filter' placeholder="filter here" name='any-0'>
+                                    <div class='filter-btn'>add</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
             </div>    
+  
         </div>
         <!-- submit btn -->
         <button class='submit-btn'>Get results</button>
