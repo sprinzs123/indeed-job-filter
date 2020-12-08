@@ -147,7 +147,7 @@ headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/5
 
 # main function that is used to record items and is used on flask file
 def all_data(input_url, title_filters, requirements_filters, summary_filters):
-    all_pages = get_valid_urls(input_url)
+    all_pages = urls_from_total(input_url)
     data_transform = DataTransformation()
     for one_page in all_pages:
         initial_page = requests.get(one_page, headers=headers)
@@ -240,9 +240,24 @@ def valid_scare_url(initial_url):
     return url_list
 
 
+# get how many jobs are totally detected
+def urls_from_total(initial_url):
+    url_list = []
+    url_list.append(initial_url)
+    initial_page = requests.get(initial_url, headers=headers)
+    soup = BeautifulSoup(initial_page.content, 'html.parser')
+    results_count = soup.find("div", {"id": "searchCountPages"}).text
+    int_results = int(results_count.split()[-2])
+    pagination_count = int(int_results/15)
+    for i in range(1, pagination_count + 1):
+        new_url = initial_url + '&start' + '=' + str(i * 10)
+        url_list.append(new_url)
+    return url_list
+
+
 # testing items to validate data
 test_url = 'https://www.indeed.com/jobs?q=computer+science+internship&l=Marlton,+NJ&ts=1607291973924&rq=1&rsIdx=0'
-valid_scare_url(test_url)
+urls_from_total(test_url)
 
 # print(all_data(test_url, None, None, None))
 

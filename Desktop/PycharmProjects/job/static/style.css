@@ -5,7 +5,7 @@
     --textBlack: #2d2d2d
 }
 
-h4{
+h2, h3{
     color: var(--inBlue);
 }
 
@@ -13,18 +13,7 @@ body{
     margin: 0px;
     color: var(--textBlack);
 }
-@media screen and (max-width: 768px){
-    .all-search{
-        display: block;
-    }
-}
 
-@media screen and (max-width: 978px){
-    .container{
-        width: 90%;
-        margin: 0 auto;
-    }
-}
 
 .container{
     width: 85%;
@@ -73,19 +62,37 @@ input:focus{
 ul{
     list-style: none;
 }
-
+.filter{
+    width: 10em;    
+}
 .all-search{
     display: flex;
-    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+@media screen and (max-width: 768px){
+    .all-search{
+        display: block;
+    }
+    .filter{
+        width: 75%;
+    }
 }
 
-.filter{
-    width: 75%;    
+@media screen and (max-width: 978px){
+    .container{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+#url-input{
+    width: 75%;
 }
 
 .filter-btn, .delete-btn{
     border: none;
-    color: black;
+    color: var(--textBlack);
     padding: 4px 8px;
     text-align: center;
     text-decoration: none;
@@ -94,9 +101,14 @@ ul{
     border: 1px var(--borderGrey) solid;
     border-radius: 5px;
     margin-left: 2px;
-    background-color: rgb(199, 199, 199);
+    background-color: rgb(225, 225, 225);
 }
 
+
+
+.filter-btn:hover, .delete-btn:hover{
+    cursor: pointer;
+}
 .filter-items{
     display: block;
     padding-left: 0px;
@@ -116,6 +128,7 @@ ul{
     margin-top: 3em;
     border: none;
     border-radius: 5px;
+    margin: 1em;
 }
 
 

@@ -1,4 +1,3 @@
-
 function addFields() {
     let allAddBtns = document.querySelectorAll('.filter-btn')
     allAddBtns.forEach((addField) => {

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="project-info">
             <div class="project-info-text">
-                <h4>About project</h4>
+                <h2>About project</h2>
                 <p>Filter items from search results from indeed.com to get better results.</p>
             </div> 
         </div>
@@ -12,7 +12,7 @@
         <form action="#" method="POST" id='filter-form'>
             <div class="initial-box">
                 <div class="initial-box-in">
-                    <h5>How to use it</h5>
+                    <h2>How to use it</h2>
                     <h4 class='empty-url'>Empty URL</h4>
                     <input type="text" name='job-url' placeholder="url here" id='url-input'>
                     <p>Make initial search at indeed and then pass this url here</p>
@@ -21,8 +21,8 @@
                 <!-- filter box -->
         <div class="filter-box">
             <div class="container-items">
-                <h4>Filter Items</h4>
-                <h4>Exact search</h4>
+                <h2>Filter Items</h2>
+                <h3>Exact search</h3>
                 <p>Filter items by exact keywords</p>
                 <div class="all-search">
                     <div class="search-box">                
@@ -57,16 +57,14 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    
-
+                    </div>                  
                 </div>    
-                <h4>Common search</h4>
-                <p>Filter all items that have this search word</p>
+                <h3>Common search</h3>
+                <p>Filter all items that have this search word in title, requirements, or summary of the job</p>
                 <div class="all-search">
                     <div class="search-box">                
                         <div class="title-box">
-                            <ul class='filter-items' id='title'>
+                            <ul class='filter-items' id='any'>
                                 <li class="one-box">
                                     <input type="text" class='filter' placeholder="filter here" name='any-0'>
                                     <div class='filter-btn'>add</div>
@@ -74,9 +72,8 @@
                             </ul>
                         </div>
                     </div>
-            </div>    
-  
-        </div>
+                </div>    
+          </div>
         <!-- submit btn -->
         <button class='submit-btn'>Get results</button>
         </form>
