@@ -54,58 +54,62 @@ class LinkedList(object):
     def filter_titles(self, filter_list):
         current = self.head
         previous = None
-        while current:
-
-            if current.title in filter_list:
-                previous.next = current.next
-                current = current.next
-            else:
-                previous = current
-                current = current.next
+        if len(filter_list) != 0:
+            while current:
+                if current.title in filter_list:
+                    previous.next = current.next
+                    current = current.next
+                else:
+                    previous = current
+                    current = current.next
 
     def filter_requirements(self, filter_list):
         current = self.head
         previous = None
-        while current:
-            if current.requirements in filter_list:
-                previous.next = current.next
-                current = current.next
-            else:
-                previous = current
-                current = current.next
+        if len(filter_list) != 0:
+            while current:
+                if current.requirements in filter_list:
+                    previous.next = current.next
+                    current = current.next
+                else:
+                    previous = current
+                    current = current.next
 
     def filter_summary(self, filter_list):
         current = self.head
         previous = None
-        while current:
-            if current.summary in filter_list:
-                previous.next = current.next
-                current = current.next
-            else:
-                previous = current
-                current = current.next
+        if len(filter_list) != 0:
+            while current:
+                if current.summary in filter_list:
+                    previous.next = current.next
+                    current = current.next
+                else:
+                    previous = current
+                    current = current.next
 
-    def date_filter(self, filter_date):
+    def date_filter(self, exporation_date):
         current = self.head
         previous = None
-        while current:
-            if current.date <= filter_date:
-                previous.next = current.next
-                current = current.next
-            else:
-                previous = current
-                current = current.next
+        if exporation_date is not None:
+            while current:
+                if current.date <= exporation_date:
+                    previous.next = current.next
+                    current = current.next
+                else:
+                    previous = current
+                    current = current.next
 
     def filter_any(self, filter_list):
         current = self.head
         previous = None
-        while current:
-            if current.title in filter_list or current.summary in filter_list or current.requirements in filter_list:
-                previous.next = current.next
-                current = current.next
-            else:
-                previous = current
-                current = current.next
+        if len(filter_list) != 0:
+            while current:
+                if current.title in filter_list or current.summary in filter_list or current.requirements in filter_list:
+                    previous.next = current.next
+                    current = current.next
+                else:
+                    previous = current
+                    current = current.next
 
 
 # unit testing for some of the data
@@ -146,12 +150,11 @@ headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/5
 
 
 # main function that is used to record items and is used on flask file
-def all_data(input_url, title_filters, requirements_filters, summary_filters):
+def all_data(input_url, title_filters, requirements_filters, summary_filters, any_filter, date_limit):
     all_pages = urls_from_total(input_url)
     data_transform = DataTransformation()
     for one_page in all_pages:
         initial_page = requests.get(one_page, headers=headers)
-        all_jobs = []
         item_list = LinkedList()
         soup = BeautifulSoup(initial_page.content, 'html.parser')
         for job in soup.find_all("div", {"class": "row"}):
@@ -179,7 +182,11 @@ def all_data(input_url, title_filters, requirements_filters, summary_filters):
 
         # filtering items/getting final result of the that is going to be passed into flask for display
         # final output is lists of lists
-        # print(item_list.item_count())
+        item_list.date_filter(date_limit)
+        item_list.filter_any(any_filter)
+        item_list.filter_titles(title_filters)
+        item_list.filter_requirements(requirements_filters)
+        item_list.filter_summary(summary_filters)
         return item_list.final_results()
 
 
