@@ -14,7 +14,6 @@ from pygal.style import Style
 def cal_time(total1):
     min1 = 0
     hrs = 0
-    print(total1)
     for t in total1:
         if type(t) == str:
             t = (str(t))

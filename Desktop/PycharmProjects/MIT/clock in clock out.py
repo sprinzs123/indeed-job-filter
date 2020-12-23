@@ -116,7 +116,7 @@ class Database:
 # updates specific row with values and condition we are been provided
 #(new, old) when manual update method
     def update(self):
-        self.cur.execute("UPDATE study SET total=? WHERE total=?", ('00:30', '1:15'))
+        self.cur.execute("UPDATE study SET total=? WHERE total=?", ('00:20', '01:16'))
         self.conn.commit()
 # v
 # view all database

@@ -138,11 +138,13 @@ class BinaryTree(object):
             if current_node.left is None:
                 current_node.left = Node(data)
             else:
+                print(data)
                 self._insert(data, current_node.left)
         elif data > current_node.value:
             if current_node.right is None:
                 current_node.right = Node(data)
             else:
+                print(data)
                 self._insert(data, current_node.right)
         else:
             print('value already present in tree')
@@ -171,12 +173,7 @@ new = BinaryTree()
 for i in make_tree:
     new.insert(i)
 
-root_node = new.get_root()
-# print(new.height(root_node))
-# print(new.find(11))
-print(new.is_balanced())
-new.rotate_tree(root_node)
-print(new.is_balanced())
+print(new.print_tree('preorder'))
 
 
 # create tree

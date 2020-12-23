@@ -170,8 +170,8 @@ def home():
     # some global variable we need
     limit = 5
     y_axis = 'Time(hrs)'
-    completed_projects = ['review analysis', 'security app', 'mit', 'study.db', 'store', 'clinic', 'store2', 'bakery', 'debate', 'interview', 'translate']
-    working_proj = "translate"
+    completed_projects = ['review analysis', 'security app', 'mit', 'study.db', 'store', 'clinic', 'store2', 'bakery', 'debate', 'interview', 'translate', 'job']
+    working_proj = "job"
 
     # top subject/topic
     def get_top(goal, lmt):
